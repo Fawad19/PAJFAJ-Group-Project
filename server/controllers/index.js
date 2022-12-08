@@ -40,6 +40,17 @@ module.exports.displayLoginPage = (req, res, next) => {
   }
 };
 
+module.exports.displaySurvey1 = (req, res, next) => {
+  // check if the user is already logged in
+  if (!req.user) {
+    res.render("survey1", {
+      title: "Survey1"
+    });
+  } else {
+    return res.redirect("/");
+  }
+};
+
 // login authentication
 module.exports.processLoginPage = (req, res, next) => {
   passport.authenticate("local", (err, user, info) => {
