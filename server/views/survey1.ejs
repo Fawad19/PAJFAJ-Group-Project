@@ -1,0 +1,134 @@
+<%- include partials/header.ejs %> <%- include partials/main_nav.ejs %>
+
+<div class="container">
+  <div class="row">
+    <div class="offset-md-3 col-md-6">
+      <h1>Canadian International Student Welcome Survey</h1>
+      <p>This survey is designed for International Students in Canada who are new to the country (> 1 year).</p>
+
+      <form class="form" method="post">
+        <div class="from-group">
+          <label for="nameTextField">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nameTextField"
+            placeholder="Enter Name:"
+            name="name"
+            required
+          />
+        </div>
+
+        <div class="from-group">
+            <label for="emailTextField">Email</label>
+            <input
+              type="text"
+              class="form-control"
+              id="emailTextField"
+              placeholder="Enter Email:"
+              name="email"
+              required
+            />
+        </div>
+
+        <div class="from-group">
+            <label for="phoneTextField">Phone</label>
+            <input
+              type="text"
+              class="form-control"
+              id="phoneTextField"
+              placeholder="Enter Phone Number:"
+              name="phone"
+              required
+            />
+        </div>
+
+        <div class="from-group">
+            <label for="colTextField">College or Institution</label>
+            <input
+              type="text"
+              class="form-control"
+              id="colTextField"
+              placeholder="Enter College or Institution:"
+              name="college"
+              required
+            />
+        </div>
+        <br>
+        <div class="from-group">
+            <label for="visitTextField">Have you previously visited Canada before studying here?</label>
+            <input
+              type="text"
+              class="form-control"
+              id="visitTextField"
+              placeholder="Enter answer here:"
+              name="visit"
+              required
+            />
+        </div>
+        <br>
+        <div class="from-group">
+            <label for="accTextField">Describe your living accomodations here in Canada.</label>
+            <input
+              type="text"
+              class="form-control"
+              id="accTextField"
+              placeholder="Enter answer here:"
+              name="accomodations"
+              required
+            />
+        </div>
+        <br>
+        <div class="from-group">
+            <label for="choicesTextField">What were your top 3 Canadian Institutions when you were applying as an International Student?</label>
+            <input
+              type="text"
+              class="form-control"
+              id="choicesTextField"
+              placeholder="Enter answer here:"
+              name="choices"
+              required
+            />
+        </div>
+        <br>
+        <div class="from-group">
+            <label for="fieldOfStudyTextField">What field of study is your program in?</label>
+            <input
+              type="text"
+              class="form-control"
+              id="fieldOfStudyTextField"
+              placeholder="Enter answer here:"
+              name="fieldOfStudy"
+              required
+            />
+        </div>
+        <br>
+        <div class="from-group">
+          <label for="expTextField">On a scale of 1 to 10, how would you rate your experience in Canada so far?</label>
+          <input
+            type="number"
+            min=1
+            max=10
+            class="form-control"
+            id="expTextField"
+            placeholder="Enter answer here:"
+            name="exp"
+            required
+          />
+      </div>
+        <br>
+
+        <button class="btn btn-primary" type="submit">
+          <i class="fas fa-edit"></i>Submit
+        </button>
+
+        <a href="/home" class="btn btn-danger">
+          <i class="fas fa-undo"></i>Cancel
+        </a>
+      </form>
+      <br>
+    </div>
+  </div>
+</div>
+
+<%- include partials/footer.ejs %>
