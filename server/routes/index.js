@@ -15,6 +15,9 @@ router.get("/about", indexController.displayAboutpage);
 /* GET Products page. */
 router.get("/products", indexController.displayProductspage);
 
+/* get surveys */
+router.get("/surveys", indexController.displaySurveys);
+
 /* get survey 1*/
 router.get("/survey1", indexController.displaySurvey1);
 

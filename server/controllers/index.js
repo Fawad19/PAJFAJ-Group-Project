@@ -21,6 +21,11 @@ module.exports.displayAboutpage = (req, res, next) => {
   res.render("about", { title: "About Me Page" });
 };
 
+//surveys page
+module.exports.displaySurveys = (req, res, next) => {
+  res.render("surveys", { title: "Surveys Page" });
+};
+
 //products
 module.exports.displayProductspage = (req, res, next) => {
   res.render("products", { title: "Products Page" });

@@ -155,3 +155,15 @@ a{
     border-radius: 60px;
     font-size: 8pt;
 }
+.card_cover{
+    text-align: center;
+}
+.card_cover > .card{
+    display: inline-block;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+.space_1{
+    height: 50px;
+}
+
