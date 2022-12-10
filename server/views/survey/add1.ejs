@@ -1,0 +1,57 @@
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+<div>
+    <form class="form" method="POST">
+
+        <h1>Area of Major</h1>
+    
+        <div class="form-group">
+            <p>Field: </p>
+        
+            <input type="radio" name="field" id="science" value="science">
+            <label for="science">Science</label>
+    
+          
+            <input type="radio" name="field" id="commerce" value="commerce">
+            <label for="commerce">Commerce</label>
+    
+            <input type="radio" name="field" id="arts" value="arts">
+            <label for="arts">Arts</label>
+    
+            
+    
+        </div>
+    
+        <div class="form-group">
+            <label for="major">Enter Major: </label>
+            <input type="text" class="form-control"
+            id="major"
+            placeholder="Enter major..."
+            name="major" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="institution">Enter Institution: </label>
+            <input type="text" class="form-control"
+            id="institution" placeholder="Enter institution..."
+            name="institution" required>
+        </div>
+    
+         
+        <div class="form-group">
+            <label for="years">Enter years of study: </label>
+            <input type="text" class="form-control"
+            id="years"
+            placeholder="Enter years of study..."
+            name="years" required>
+        </div>
+        
+        <button class="btn btn-primary" type="submit">
+        <i class="fas fa-edit"></i> Submit</button>
+        <a href="/survey-list" class="btn btn-warning">
+        <i class="fas fa-undo"></i> Cancel</a>
+    </form>
+
+</div>
+<%- include ../partials/bottom_nav.ejs %>   <%- include ../partials/footer.ejs %>
