@@ -1,9 +1,3 @@
-/*Name: Fawad Mohammed Zaheer
-Student Id: 301230271
-Course: COMP_229(Web Application Development)
-Instructor: Malek Zakeyabanu
-Assignment: Assignment-2(Authentication)
-*/ 
 
 let express = require("express");
 let router = express.Router();
