@@ -32,23 +32,82 @@
           <a class="nav-link" href="/products"><i class="fab fa-elementor"></i> Products </a>
         </li>
 
-        <% if (title == "Products") { %>
-        <li class="nav-item active">
-        <% } else  { %>
-        <li class="nav-item">
-        <% } %>
-          <a class="nav-link" href="/products"><i class="fab fa-elementor"></i> Survey 1 </a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Surveys
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+            <li>
+              <% if (title == "Products") { %>
+              <li class="nav-item active">
+              <% } else  { %>
+              <li class="nav-item">
+              <% } %>
+                <a class="nav-link" href="/products"><i class="fab fa-elementor"></i> Survey 1 </a>
+              </li>
+            </li>
+            <li>
+              <% if (title == "Products") { %>
+              <li class="nav-item active">
+              <% } else  { %>
+              <li class="nav-item">
+              <% } %>
+                <a class="nav-link" href="/products"><i class="fab fa-elementor"></i> Survey 1 </a>
+              </li>
+            </li>
+            <li>
+              <% if (title == "Products") { %>
+              <li class="nav-item active">
+              <% } else  { %>
+              <li class="nav-item">
+              <% } %>
+                <a class="nav-link" href="/products"><i class="fab fa-elementor"></i> Survey 1 </a>
+              </li>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Surveys Results
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+            <li>
+              <% if (title == "Contact") { %>
+              <li class="nav-item active">
+              <% } else  { %>
+              <li class="nav-item">
+              <% } %>
+                <a class="nav-link" href="/survey-list"><i class="fas fa-mobile-alt"></i> Survey Result </a>
+              </li>
+            </li>
+            <li>
+              <% if (title == "Contact") { %>
+              <li class="nav-item active">
+              <% } else  { %>
+              <li class="nav-item">
+              <% } %>
+                <a class="nav-link" href="/survey-list"><i class="fas fa-mobile-alt"></i> Survey Result </a>
+              </li>
+            </li>
+            <li>
+              <% if (title == "Contact") { %>
+              <li class="nav-item active">
+              <% } else  { %>
+              <li class="nav-item">
+              <% } %>
+                <a class="nav-link" href="/survey-list"><i class="fas fa-mobile-alt"></i> Survey Result </a>
+              </li>
+            </li>
+          </ul>
         </li>
 
         
 
-        <% if (title == "Contact") { %>
-        <li class="nav-item active">
-        <% } else  { %>
-        <li class="nav-item">
-        <% } %>
-          <a class="nav-link" href="/survey-list"><i class="fas fa-mobile-alt"></i> Survey Result </a>
-        </li>
+        
+
+        
+        
         <% if(typeof displayName == 'string' && displayName) { %>
           <li class="navbar-text"><i class="fas fa-lg fa-user"></i> Welcome, <%= displayName %></li>
           <li class="nav-item"><a href="/logout" class="nav-link">
