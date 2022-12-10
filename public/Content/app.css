@@ -141,5 +141,7 @@ a{
     display: flex;
     justify-content: center;
 }
+.dropdown:hover .dropdown-menu {
+}
 
 
