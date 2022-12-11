@@ -1,0 +1,60 @@
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+<div>
+    <form class="form" method="POST">
+
+        <h1>Accommodations</h1>
+    
+        <div class="form-group">
+            <p>Budget: </p>
+        
+            <input type="radio" name="amount" id="firstAmount" value="400-600">
+            <label for="firstAmount">400-600</label>
+    
+          
+            <input type="radio" name="amount" id="secondAmount" value="600-800">
+            <label for="secondAmount">600-800</label>
+    
+            <input type="radio" name="amount" id="thirdAmount" value="800+">
+            <label for="thirdAmount">800+</label>
+        </div>
+    
+        <div class="form-group">
+            <p>Housing Type: </p>
+        
+            <input type="radio" name="housing" id="apartment" value="apartment">
+            <label for="apartment">Apartment</label>
+    
+          
+            <input type="radio" name="housing" id="studio" value="studio">
+            <label for="studio">Studio</label>
+    
+            <input type="radio" name="housing" id="house" value="house">
+            <label for="house">House</label>
+    
+            <input type="radio" name="housing" id="basaement" value="basement">
+            <label for="house">Basement</label>
+    
+        </div>
+        
+        <div class="form-group">
+            <label for="area"> Area Code:  </label>
+            <input type="text" class="form-control"
+            id="area"placeholder="Enter area: " name="area" required>
+        </div>
+    
+    
+        <button class="btn btn-primary" type="submit">
+            <i class="fas fa-edit"></i> Submit</button>
+            <a href="/surveylist2" class="btn btn-warning">
+            <i class="fas fa-undo"></i> Cancel</a>
+    </form>
+
+</div>
+
+
+
+
+
+<%- include ../partials/bottom_nav.ejs %>   <%- include ../partials/footer.ejs %>

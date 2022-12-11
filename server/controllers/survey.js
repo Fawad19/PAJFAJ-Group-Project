@@ -6,113 +6,312 @@ let mongoose = require("mongoose");
 let jwt = require('jsonwebtoken');
 
 //create reference to the model (dbschema )
-let SurveyList = require("../models/survey");
+let survey1 = require("../models/survey1");
+let survey2 = require("../models/survey2");
+let survey3 = require("../models/survey3");
 
-module.exports.displaySurveyList = (req, res, next) => {
-  SurveyList.find((err, SurveyList) => {
+
+module.exports.displaysurvey1List = (req, res, next) => {
+  survey1.find((err, surveyList1) => {
     if (err) {
       return console.error(err);
     } else {
-      //console.log(listsList);
+      //console.log(survey_List);
 
-      res.render("survey/list", { title: "Survey Contact", SurveyList: SurveyList,
-      displayName: req.user ? req.user.displayName : ''});
+      res.render("survey/list1", {
+        title: "Survey List",
+        SurveyList1: surveyList1,
+        displayName: req.user ? req.user.displayName : "",
+      });
+      //render list.ejs and pass title and Survey_list variable we are passing survey_List object to Survey_list property
     }
   });
 };
 
-//add page
-module.exports.addPage = (req, res, next) => {
-  res.render("survey/add", {
-    title: "Add Contact",
-    displayName: req.user ? req.user.displayName : "",
-  });
-};
-
-//add page
-module.exports.addProcessPage = (req, res, next) => {
-  let newSurvey = SurveyList({
-    "GPA": req.body.GPA,
-    "address":req.body.address,
-    "comments":req.body.comments,
-    "country":req.body.country,
-    "dateOfBirth":req.body.dateOfBirth,
-    "firstName":req.body.firstName,
-    "lastName":req.body.lastName,
-    "major":req.body.major,
-    "school":req.body.school,
-    "phoneNumber": req.body.phoneNumber,
-    "email": req.body.email,
-    "semester":req.body.semester,
-  });
-  SurveyList.create(newSurvey, (err, SurveyList) => {
+module.exports.displaysurvey2List = (req, res, next) => {
+  survey2.find((err, surveyList2) => {
     if (err) {
-      console.log(err);
-      res.end(err);
+      return console.error(err);
     } else {
-      // refresh the lists list
-      res.redirect("/survey-list");
+      //console.log(survey_List);
+
+      res.render("survey/list2", {
+        title: "Survey List",
+        SurveyList2: surveyList2,
+        displayName: req.user ? req.user.displayName : "",
+      });
+      //render list.ejs and pass title and Survey_list variable we are passing survey_List object to Survey_list property
     }
   });
 };
 
-//get edit page
-module.exports.displayEditPage = (req, res, next) => {
-  let id = req.params.id; 
-
-  SurveyList.findById(id, (err, listToEdit) => {
+module.exports.displaysurvey3List = (req, res, next) => {
+  survey3.find((err, surveyList3) => {
     if (err) {
-      console.log(err);
-      res.end(err);
+      return console.error(err);
     } else {
-      //show the edit view
-      res.render("survey/edit", { title: "Edit List", SurveyList: listToEdit, 
-      displayName: req.user ? req.user.displayName : ''});
+      //console.log(survey_List);
+
+      res.render("survey/list3", {
+        title: "Survey List",
+        SurveyList3: surveyList3,
+        displayName: req.user ? req.user.displayName : "",
+      });
+      //render list.ejs and pass title and Survey_list variable we are passing survey_List object to Survey_list property
     }
   });
 };
 
-//edit page
-module.exports.processingEditPage = (req, res, next) => {
-  let id = req.params.id; //id of actual object
 
-  let updateLists = SurveyList({
-    "_id": id,
-    "GPA": req.body.GPA,
-    "address":req.body.address,
-    "comments":req.body.comments,
-    "country":req.body.country,
-    "dateOfBirth":req.body.dateOfBirth,
-    "firstName":req.body.firstName,
-    "lastName":req.body.lastName,
-    "major":req.body.major,
-    "school":req.body.school,
-    "phoneNumber": req.body.phoneNumber,
-    "email": req.body.email,
-    "semester":req.body.semester,
-  });
-  SurveyList.updateOne({ _id: id }, updateLists, (err) => {
-    if (err) {
-      console.log(err);
-      res.end(err);
-    } else {
-      //refresh the lists list
-      res.redirect("/survey-list");
-    }
-  });
-};
+  // for template 1
+  module.exports.template1page = (req, res, next) =>{
+    res.render("survey/template1", {
+      title:"International Students",
+      displayName: req.user ? req.user.displayName : "",
+    });
+  };
 
-//delete page
-module.exports.deletePage = (req, res, next) => {
-  let id = req.params.id;
+  module.exports.template1processpage = (req, res, next) =>{
+    let newsurvey1 = survey1({
+      fullname: req.body.fullname,
+      email: req.body.email,
+      address: req.body.address,
+      phoneNumber: req.body.phoneNumber,
+      age: req.body.age,
+    });
   
-  SurveyList.remove({ _id: id }, (err) => {
-    if (err) {
-      console.log(err);
-      res.end(err);
-    } else {
-      //refresh lists list
-      res.redirect("/survey-list");
-    }
-  });
-};
+    survey1.create(newsurvey1, (err, survey1)=>{
+      if (err){
+        console.log(err);
+        res.end(err);
+      } else {
+        res.redirect("/surveylist1");
+      }
+    });
+  };
+
+  module.exports.template2page = (req, res, next) =>{
+    res.render("survey/template2", {
+      title:"Accommodations",
+      displayName: req.user ? req.user.displayName : "",
+    });
+  };
+  
+  module.exports.template2processpage = (req, res, next) =>{
+    let newsurvey2 = survey2({
+      budget: req.body.budget,
+      areaCode: req.body.areaCode,
+      housing: req.body.housing,
+    });
+  
+    survey2.create(newsurvey2, (err, survey2)=>{
+      if (err){
+        console.log(err);
+        res.end(err);
+      } else {
+        res.redirect("/surveylist2");
+      }
+    });
+  };
+
+  module.exports.template3page = (req, res, next) =>{
+    res.render("survey/template3", {
+      title:"Area of Major",
+      displayName: req.user ? req.user.displayName : "",
+    });
+  };
+  
+  module.exports.template3processpage = (req, res, next) =>{
+    let newsurvey3 = survey3({
+      field: req.body.field,
+      major: req.body.major,
+      institution: req.body.institution,
+      years: req.body.years,
+    });
+  
+    survey3.create(newsurvey3, (err, survey3)=>{
+      if (err){
+        console.log(err);
+        res.end(err);
+      } else {
+        res.redirect("/surveylist3");
+      }
+    });
+  };
+
+
+
+
+  module.exports.displayeditpage1 = (req, res, next) => {
+    let id = req.params.id; //id of actual object
+  
+    survey1.findById(id, (err, survey_edit1) => {
+      if (err) {
+        console.log(err);
+        res.end(err);
+      } else {
+        //show the edit view
+        res.render("survey/edit1", {
+          title: "Edit surveys",
+          survey1: survey_edit1,
+          displayName: req.user ? req.user.displayName : "",
+        });
+      }
+    });
+  };
+  
+  module.exports.processingeditpage1 = (req, res, next) => {
+    let id = req.params.id; //id of actual object
+  
+    let updatesurvey1 = survey1({
+      _id: id,
+      fullname: req.body.fullname,
+      email: req.body.email,
+      address: req.body.address,
+      phoneNumber: req.body.phoneNumber,
+      age: req.body.age,
+      
+    });
+    survey1.updateOne({ _id: id }, updatesurvey1, (err) => {
+      if (err) {
+        console.log(err);
+        res.end(err);
+      } else {
+        //refresh the survey page
+        res.redirect("/surveylist1");
+      }
+    });
+  };
+
+  module.exports.deletepage1 = (req, res, next) => {
+    let id = req.params.id;
+    survey1.remove({ _id: id }, (err) => {
+      if (err) {
+        console.log(err);
+        res.end(err);
+      } else {
+        //refresh the survey page
+        res.redirect("/surveylist1");
+      }
+    });
+  };
+
+
+
+
+  module.exports.displayeditpage2 = (req, res, next) => {
+    let id = req.params.id; //id of actual object
+  
+    survey2.findById(id, (err, survey_edit2) => {
+      if (err) {
+        console.log(err);
+        res.end(err);
+      } else {
+        //show the edit view
+        res.render("survey/edit2", {
+          title: "Edit surveys",
+          survey2: survey_edit2,
+          displayName: req.user ? req.user.displayName : "",
+        });
+      }
+    });
+  };
+  
+  module.exports.processingeditpage2 = (req, res, next) => {
+    let id = req.params.id; //id of actual object
+  
+    let updatesurvey2 = survey2({
+      _id: id,
+      budget: req.body.budget,
+      areaCode: req.body.areaCode,
+      housing: req.body.housing,
+    });
+    survey2.updateOne({ _id: id }, updatesurvey2, (err) => {
+      if (err) {
+        console.log(err);
+        res.end(err);
+      } else {
+        //refresh the survey page
+        res.redirect("/surveylist2");
+      }
+    });
+  };
+  
+  module.exports.deletepage2 = (req, res, next) => {
+    let id = req.params.id;
+    survey2.remove({ _id: id }, (err) => {
+      if (err) {
+        console.log(err);
+        res.end(err);
+      } else {
+        //refresh the survey page
+        res.redirect("/surveylist2");
+      }
+    });
+  }; 
+
+
+  module.exports.displayeditpage3 = (req, res, next) => {
+    let id = req.params.id; //id of actual object
+  
+    survey3.findById(id, (err, survey_edit3) => {
+      if (err) {
+        console.log(err);
+        res.end(err);
+      } else {
+        //show the edit view
+        res.render("survey/edit3", {
+          title: "Edit surveys",
+          survey3: survey_edit3,
+          displayName: req.user ? req.user.displayName : "",
+        });
+      }
+    });
+  };
+  
+  module.exports.processingeditpage3 = (req, res, next) => {
+    let id = req.params.id; //id of actual object
+  
+    let updatesurvey3 = survey3({
+      _id: id,
+      field: req.body.field,
+      major: req.body.major,
+      institution: req.body.institution,
+      years: req.body.years,
+    });
+    survey3.updateOne({ _id: id }, updatesurvey3, (err) => {
+      if (err) {
+        console.log(err);
+        res.end(err);
+      } else {
+        //refresh the survey page
+        res.redirect("/surveylist3");
+      }
+    });
+  };
+  
+  module.exports.deletepage3 = (req, res, next) => {
+    let id = req.params.id;
+    survey3.remove({ _id: id }, (err) => {
+      if (err) {
+        console.log(err);
+        res.end(err);
+      } else {
+        //refresh the survey page
+        res.redirect("/surveylist3");
+      }
+    });
+  }; 
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,70 @@
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+  
+
+  <!-- Main Content -->
+  <main class="container-survey">
+    <div>
+        <div><br>
+            <h1 class="text-center">Survey 1 Result</h1><hr>
+            
+            <% if(typeof displayName == 'string' && displayName) { %>
+                
+            <% } %><br>
+            
+            <br>
+            <table class="table table-bordered table-striped table-hover">
+                <!-- Header Row-->
+                <tr>
+                    <% if(typeof displayName == 'string' && displayName) { %>
+                        <th class="text-center">Full Name</th>
+                        <th class="text-center">Email</th>                        
+                        <th class="text-center">Address</th>
+                        <th class="text-center">Phone Number</th>
+                        <th class="text-center">Age</th>
+                    <% } else { %>
+                        <th class="text-center">Full Name</th>
+                        <th class="text-center">Email</th>                        
+                        <th class="text-center">Address</th>
+                        <th class="text-center">Phone Number</th>
+                        <th class="text-center">Age</th>
+                        <th></th>
+                        <th></th>
+                    <% } %>
+                </tr>
+
+                <!-- Repeatable Template Row -->
+
+                <% for(let count = 0; count < Surveylist1.length; count++) { %>
+                    <tr>
+                        <% if(typeof displayName == "string" && displayName) { %>
+                           <td class="text-center"><%= SurveyList1[count].fullname %></td>
+                           <td class="text-center"><%= SurveyList1[count].email %></td>
+                           <td class="text-center"><%= SurveyList1[count].address %></td>
+                           <td class="text-center"><%= SurveyList1[count].phoneNumber %></td>
+                           <td class="text-center"><%= SurveyList1[count].age %></td>
+                
+                           <td class="text-center">
+                            <a href="/surveylist1/edit1/<%= SurveyList1[count]._id %>" class="btn btn-primary"> <i class="fa"></i>Edit</a>
+                          </td>
+                          <td class="text-center">
+                            <a href="/surveylist1/delete/<%= SurveyList1[count]._id %>" class="btn btn-warning btn-sm"> <i class="fa"></i>Delete</a>
+                          </td>
+                         <% } else { %>
+                            <td class="text-center"><%= SurveyList1[count].fullname %></td>
+                            <td class="text-center"><%= SurveyList1[count].email %></td>
+                            <td class="text-center"><%= SurveyList1[count].address %></td>
+                            <td class="text-center"><%= SurveyList1[count].phoneNumber %></td>
+                            <td class="text-center"><%= SurveyList1[count].age %></td>
+                         <% } %>
+                       </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+  </main>
+ 
+<%- include ../partials/bottom_nav.ejs %>  
+
+<%- include ../partials/footer.ejs %>
