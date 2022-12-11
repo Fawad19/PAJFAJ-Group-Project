@@ -145,3 +145,25 @@ a{
     display: block;
     margin-top: 0;
 }
+
+.navbar > div {
+    margin: auto;
+}
+.footer-content{
+    background-color: white;
+    padding:5px 20px 5px 20px;
+    border-radius: 60px;
+    font-size: 8pt;
+}
+.card_cover{
+    text-align: center;
+}
+.card_cover > .card{
+    display: inline-block;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+.space_1{
+    height: 50px;
+}
+
