@@ -8,7 +8,7 @@ router.get("/", indexController.displayHomepage);
 
 router.get("/home", indexController.displayHomepage);
 
-router.get("templates",indexController.displaytemplatespage);
+router.get("/templates",indexController.displaytemplatespage);
 
 router.get("/template1/login", indexController.displayLoginPage);
 /* POST Route for processing the Login page */
@@ -69,7 +69,7 @@ router.get("/about", indexController.displayAboutpage);
 router.get("/products", indexController.displayProductspage);
 
 /* get survey 1*/
-router.get("/survey1", indexController.displaySurvey1);
+//router.get("/survey1", indexController.displaySurvey1);
 
 /* GET Route for displaying the Login page */
 router.get("/login", indexController.displayLoginPage);

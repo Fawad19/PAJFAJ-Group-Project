@@ -1,63 +1,71 @@
 <!-- Main Navigation -->
-  <nav class="navbar nav-top navbar-expand-lg">
-    <a class="navbar-brand" href="/">PAJFAJ</a> 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <!--navugation part starts-->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+<nav class="navbar nav-top navbar-expand-lg">
+  <a class="navbar-brand" href="/">PAJFAJ</a> 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!--navugation part starts-->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
 
-        <% if (title == "Home"){ %>
+      <% if (title == "Home"){ %>
+      <li class="nav-item active">
+      <% } else  { %>
+      <li class="nav-item">
+      <% } %>
+        <a class="nav-link" href="/home"><i class="fas fa-lg fa-laptop-house"></i> Home </a> 
+      </li>
+
+      <% if (title == "About") { %>
+      <li class="nav-item active">
+      <% } else  { %>
+      <li class="nav-item">
+      <% } %>
+        <a class="nav-link" href="/about"><i class="fas fa-info-circle"></i> About </a>
+      </li>
+
+      <% if (title == "Templates") { %>
         <li class="nav-item active">
         <% } else  { %>
         <li class="nav-item">
         <% } %>
-          <a class="nav-link" href="/home"><i class="fas fa-lg fa-laptop-house"></i> Home </a> 
+          <a class="nav-link" href="/templates"><i class="fas fa-info-circle"></i> Templates </a>
         </li>
 
-        <% if (title == "About") { %>
-        <li class="nav-item active">
-        <% } else  { %>
-        <li class="nav-item">
-        <% } %>
-          <a class="nav-link" href="/about"><i class="fas fa-info-circle"></i> About </a>
-        </li>
+      <% if (title == "Products") { %>
+      <li class="nav-item active">
+      <% } else  { %>
+      <li class="nav-item">
+      <% } %>
+        <a class="nav-link" href="/products"><i class="fab fa-elementor"></i> Products </a>
+      </li>
 
-        <% if (title == "Products") { %>
-        <li class="nav-item active">
-        <% } else  { %>
-        <li class="nav-item">
-        <% } %>
-          <a class="nav-link" href="/products"><i class="fab fa-elementor"></i> Products </a>
-        </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Surveys
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="/surveylist1">Template 1</a></li>
+          <li><a class="dropdown-item" href="/surveylist2">Template 2</a></li>
+          <li><a class="dropdown-item" href="/surveylist3">Template 3</a></li>
+        </ul>
+      </li>
+      
+      <% if(typeof displayName == 'string' && displayName) { %>
+        <li class="navbar-text"><i class="fas fa-lg fa-user"></i> Welcome, <%= displayName %></li>
+        <li class="nav-item"><a href="/logout" class="nav-link">
+          <i class="fas fa-lg fa-sign-out-alt"></i> Logout</a></li>
+      <% } else { %>
+        <li class="nav-item"><a href="/login" class="nav-link">
+          <i class="fas fa-lg fa-sign-in-alt"></i> Login</a></li>
+      <% } %>
+    </ul>
+  </div>
+  <!--navugation part ends-->
+  <!--logo part starts-->
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Surveys
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/surveylist1">Template 1</a></li>
-            <li><a class="dropdown-item" href="/surveylist2">Template 2</a></li>
-            <li><a class="dropdown-item" href="/surveylist3">Template 3</a></li>
-          </ul>
-        </li>
-        
-        <% if(typeof displayName == 'string' && displayName) { %>
-          <li class="navbar-text"><i class="fas fa-lg fa-user"></i> Welcome, <%= displayName %></li>
-          <li class="nav-item"><a href="/logout" class="nav-link">
-            <i class="fas fa-lg fa-sign-out-alt"></i> Logout</a></li>
-        <% } else { %>
-          <li class="nav-item"><a href="/login" class="nav-link">
-            <i class="fas fa-lg fa-sign-in-alt"></i> Login</a></li>
-        <% } %>
-      </ul>
-    </div>
-    <!--navugation part ends-->
-    <!--logo part starts-->
-
-    <div class="logo_box">
-      <a href="/"><img src="/images/logo.jpg" alt="" class="logo_1"></a>
-    </div>
-    <!--navugation part ends-->
-  </nav>
+  <div class="logo_box">
+    <a href="/"><img src="/images/logo.jpg" alt="" class="logo_1"></a>
+  </div>
+  <!--navugation part ends-->
+</nav>

@@ -10,6 +10,24 @@ let survey1 = require("../models/survey1");
 let survey2 = require("../models/survey2");
 let survey3 = require("../models/survey3");
 
+/*
+module.exports.displaysurvey1List = (req, res, next) => {
+  survey1.find((err, surveyList1) => {
+    if (err) {
+      return console.error(err);
+    } else {
+      //console.log(survey_List);
+
+      res.render("survey/list1", {
+        title: "Survey List",
+        SurveyList1: surveyList1,
+        displayName: req.user ? req.user.displayName : "",
+      });
+      //render list.ejs and pass title and Survey_list variable we are passing survey_List object to Survey_list property
+    }
+  });
+};
+*/
 
 module.exports.displaysurvey1List = (req, res, next) => {
   survey1.find((err, surveyList1) => {

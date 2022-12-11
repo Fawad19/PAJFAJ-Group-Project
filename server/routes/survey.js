@@ -61,6 +61,9 @@ router.post("/surveylist1/edit1/:id", requireAuthS1, surveyController.processing
 /* GET to perform  Deletion for template2 - DELETE Operation */
 router.get("/surveylist1/delete/:id", requireAuthS1, surveyController.deletepage1);
 
+
+
+
 // template 2
 /* GET Route for the survey List page - READ Operation */
 router.get("/surveylist2", requireAuthS2,  surveyController.displaysurvey2List);
