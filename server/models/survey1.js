@@ -13,4 +13,4 @@ let survey1 = mongoose.Schema(
     }
 );
 
-mongoose.exports = mongoose.model("survey1", survey1);
+module.exports = mongoose.model("survey1", survey1);

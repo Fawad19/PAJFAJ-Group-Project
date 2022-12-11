@@ -81,32 +81,44 @@ module.exports.displaysurvey3List = (req, res, next) => {
 };
 
 
-  // for template 1
-  module.exports.template1page = (req, res, next) =>{
-    res.render("survey/template1", {
-      title:"International Students",
-      displayName: req.user ? req.user.displayName : "",
-    });
-  };
 
-  module.exports.template1processpage = (req, res, next) =>{
-    let newsurvey1 = survey1({
+
+module.exports.template1page = (req, res, next) =>{
+  res.render("survey/template1", {
+    title:"International Students",
+    displayName: req.user ? req.user.displayName : "",
+  });
+};
+
+module.exports.template1processpage = (req, res, next) =>{
+  let newsurvey1 = survey1({
       fullname: req.body.fullname,
       email: req.body.email,
       address: req.body.address,
       phoneNumber: req.body.phoneNumber,
       age: req.body.age,
-    });
+  });
+
+  survey1.create(newsurvey1, (err, survey1)=>{
+    if (err){
+      console.log(err);
+      res.end(err);
+    } else {
+      res.redirect("/surveylist1");
+    }
+  });
+};
+
+
+
+
+
+
+
+
   
-    survey1.create(newsurvey1, (err, survey1)=>{
-      if (err){
-        console.log(err);
-        res.end(err);
-      } else {
-        res.redirect("/surveylist1");
-      }
-    });
-  };
+
+
 
   module.exports.template2page = (req, res, next) =>{
     res.render("survey/template2", {
