@@ -39,8 +39,11 @@ nav{
     background-color: #F6EBF4;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 9px;
+    border-radius: 20px;
+    height: 60px ;
     
 }
+
 nav li a{
     color: #482673;
     font-weight: bold;
@@ -167,6 +170,8 @@ a{
     height: 50px;
 }
 
+
+
 .back-video{
     position: absolute;
     right: 0;
@@ -176,14 +181,55 @@ a{
 
 @media (min-aspect-ratio: 16/9){
     .back-video{
-        width: 100%;
-        height: auto;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 }
 
-@media (max-aspect-ratio: 16/9){
-    .back-video{
-        width: auto;
-        height: 100%;
-    }
+
+
+.card_cover .card .card-text{
+    color: white;
+    
+    
+}
+.card{
+   border-radius: 10px;
+   background-color: black;
+    padding: 0px;
+    
+}
+
+.form-layout{
+    display: flex;
+    justify-content: center;
+    border: 1px solid white;
+    width: 550px;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 15px;
+      
+}
+.form-layout2{
+    width: 450px;
+    margin-left: 10px;
+}
+.form-layout3{
+    width: 450px;
+    margin-left: 20px ;
+}
+
+.container-survey table{
+    color: white;
+    
+}
+.footer nav{
+    background-color: #F6EBF4;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 9px;
+    border-radius: 20px;
+    height: 50px ;
+    margin-bottom: 10px;
 }
