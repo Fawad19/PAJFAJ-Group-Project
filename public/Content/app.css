@@ -23,7 +23,7 @@ body{
 }
 .display-4{
     text-align: center;
-    color: #482673;
+    color: #ffffff;
     font-weight: bold;
     text-shadow: 0px 3px 0px #b2a98f,
     0px 14px 10px rgba(0,0,0,0.15),
@@ -33,7 +33,7 @@ body{
 
 body{
     background-color: #F6EBF4;
-    color: #482673;
+    color: #ffffff;
 }
 nav{
     background-color: #F6EBF4;
@@ -71,7 +71,7 @@ a:hover{
     position: relative;
     border: none;
     height: 3px;
-    background-color: rgba(0, 0, 255, .2);
+    background-color: rgba(163, 163, 163, 0.2);
     width: 94rem;
     
 }
@@ -167,3 +167,23 @@ a{
     height: 50px;
 }
 
+.back-video{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+@media (min-aspect-ratio: 16/9){
+    .back-video{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9){
+    .back-video{
+        width: auto%;
+        height: 100%;
+    }
+}
