@@ -233,3 +233,32 @@ a{
     height: 50px ;
     margin-bottom: 10px;
 }
+#table_1{
+    margin-left: 400px;
+}
+#table_2{
+    margin-left: 500px;
+}
+#table_3{
+    margin-left: 500px;
+}
+.div_pie_chart{
+    text-align: center;
+    border: 1px red solid;
+    margin-left: 400px;
+}
+#suv_1, #suv_2, #suv_3{
+    color: black;
+}
+#table_1, #table_2, #table_3{
+    color: black;
+}
+#piechart{
+    position: relative;
+    margin-top: 50px;
+    left: 490px;
+}
+#suv_1_b{
+    color: #000;
+}
+

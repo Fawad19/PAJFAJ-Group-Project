@@ -4,20 +4,18 @@
   
 
 <!-- Main Content -->
+<h1 class="text-center" id="suv_3">Survey 3 Result</h1>
 <main class="container-survey">
-  <video autoplay loop muted plays-inline class="back-video">
-    <source src="/images/video.mp4" type="video/mp4">
-    </video>
   <div>
       <div><br>
-          <h1 class="text-center">Survey 3 Result</h1>
+          
           
           <% if(typeof displayName == 'string' && displayName) { %>
               
           <% } %><br>
           
           <br>
-          <table class="table table-bordered table-striped">
+          <table class="table table-bordered table-striped" id="table_3">
               <!-- Header Row-->
               <tr>
                   <% if(typeof displayName == 'string' && displayName) { %>
@@ -65,6 +63,31 @@
       </div>
   </div>
 </main>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      // Load google charts
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      
+      // Draw the chart and set the chart values
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+        ['Task', 'Hours per Day'],
+        ['Science', 8],
+        ['Commerce', 2],
+        ['Arts', 2],
+      ]);
+      
+        // Optional; add a title and set the width and height of the chart
+        var options = {'title':'Field', 'width':550, 'height':400};
+      
+        // Display the chart inside the <div> element with id="piechart"
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+      }
+      </script>
+  <h1 class="text-center" id="suv_1_b">Pie Chart For Multiple Choices</h1>
+  <div id="piechart"></div>
 
 <%- include ../partials/bottom_nav.ejs %>  
 
