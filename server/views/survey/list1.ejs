@@ -4,9 +4,12 @@
   
 
   <!-- Main Content -->
-  <h1 class="text-center" id="suv_1">Survey 1 Result</h1><br>
-  <main class="container-survey">
-    
+  
+  <h1 style="color: white;" class="text-center" id="suv_1">Survey 1 Result</h1><br>
+  <main class="container-survey" >
+    <video autoplay loop muted plays-inline class="back-video3">
+      <source src="/images/video.mp4" type="video/mp4">
+      </video>
     <div>
       
         <div>
@@ -18,7 +21,7 @@
             <% } %><br>
             
             <br>
-            <table class="table table-bordered table-striped" id="table_1">
+            <table style="color: white;" class="table table-bordered table-striped" id="table_1">
                 <!-- Header Row-->
                 <tr>
                     <% if(typeof displayName == 'string' && displayName) { %>
@@ -95,7 +98,7 @@
         chart.draw(data, options);
       }
       </script>
-  <h1 class="text-center" id="suv_1_b">Pie Chart For Multiple Choices</h1>
+  <h1 style="color: white;" class="text-center" id="suv_1_b">Pie Chart For Multiple Choices</h1>
   <div id="piechart"></div>
  
 <%- include ../partials/bottom_nav.ejs %>  
